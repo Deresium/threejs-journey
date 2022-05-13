@@ -4,7 +4,7 @@
 <script setup lang="ts">
 import {
     AmbientLight,
-    BoxGeometry, HemisphereLight,
+    BoxGeometry, Group, HemisphereLight,
     Mesh,
     MeshBasicMaterial,
     PerspectiveCamera,
@@ -25,7 +25,7 @@ onMounted(() => {
     const scene = new Scene();
 
     const loader = new GLTFLoader();
-    let uliege: any = null;
+    let uliege: Group | null = null;
     loader.load('/uliege2.glb', (gltf) => {
         uliege = gltf.scene;
         scene.add(uliege);
